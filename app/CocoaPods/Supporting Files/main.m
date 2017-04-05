@@ -1,13 +1,22 @@
-//
-//  main.m
-//  CocoaPods
-//
-//  Created by Eloy Durán on 15/11/14.
-//  Copyright (c) 2014 CocoaPods. All rights reserved.
-//
-
 #import <Cocoa/Cocoa.h>
+#import "CocoaPods-Swift.h"
 
 int main(int argc, const char * argv[]) {
-  return NSApplicationMain(argc, argv);
+
+  [NSApplication sharedApplication];
+
+  id<NSApplicationDelegate> testDelegate = nil;
+  if (NSClassFromString(@"XCTestCase") != Nil) {
+    NSString *testBundlePath = [[NSProcessInfo processInfo] environment][@"XCInjectBundle"];
+    NSCParameterAssert(testBundlePath);
+    NSCParameterAssert([[NSBundle bundleWithPath:testBundlePath] load]);
+    testDelegate = [NSClassFromString(@"CPTestHelper") new];
+    NSApp.delegate = testDelegate;
+  } else {
+    //Loads CPAppDelegate from the .xib.
+    [[NSBundle mainBundle] loadNibNamed:@"MainMenu" owner:NSApp topLevelObjects:nil];
+  }
+
+  [NSApp run];
+  return 0;
 }
