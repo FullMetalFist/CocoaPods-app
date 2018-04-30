@@ -3,11 +3,17 @@ PODS:
   - Fragaria (1.0.1):
     - Fragaria/unicode (= 1.0.1)
   - Fragaria/unicode (1.0.1)
-  - Sparkle (1.9.0)
+  - LetsMove (1.20)
+  - Nimble (3.0.0)
+  - Quick (0.8.0)
+  - Sparkle (1.14.0)
 
 DEPENDENCIES:
   - ANSIEscapeHelper (from `ANSIEscapeHelper.podspec`)
   - Fragaria (from `Fragaria.podspec.json`)
+  - LetsMove
+  - Nimble
+  - Quick
   - Sparkle
 
 EXTERNAL SOURCES:
@@ -16,9 +22,19 @@ EXTERNAL SOURCES:
   Fragaria:
     :podspec: Fragaria.podspec.json
 
-SPEC CHECKSUMS:
-  ANSIEscapeHelper: 1d57a8d7af5b9f9d3d48dcf9bf1726f42ab9b99d
-  Fragaria: e9d2dfc249d394732f784bfb939cbba1618e45b1
-  Sparkle: 75bbbc5ab2d666f7f77c241afe7fd28364a8f9f7
+CHECKOUT OPTIONS:
+  Fragaria:
+    :commit: 8794cd8867e1d032374525cb54b8d374fd8a5c58
+    :git: https://github.com/bitstadium/Fragaria.git
 
-COCOAPODS: 0.38.2
+SPEC CHECKSUMS:
+  ANSIEscapeHelper: 03afe6f9cb70698b1444d723fcc43d1b7c9a1cc2
+  Fragaria: 1631d61b32a36fa134be59d39d09b8d903edbd5c
+  LetsMove: 40dda5f7a19bf9976e150ce304fa5765892bef8f
+  Nimble: 4c353d43735b38b545cbb4cb91504588eb5de926
+  Quick: 563d0f6ec5f72e394645adb377708639b7dd38ab
+  Sparkle: ccd95233b12a3e3d4eeb55ff01dd4c8bb8188b07
+
+PODFILE CHECKSUM: 182bca6568eaab8fdb1bae50cf0feca51f045ca4
+
+COCOAPODS: 1.0.0.rc.1
